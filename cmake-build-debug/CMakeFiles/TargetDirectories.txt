@@ -1,0 +1,3 @@
+C:/Users/Antonio Alvarez/CLionProjects/PiRadar/cmake-build-debug/CMakeFiles/PiRadar.dir
+C:/Users/Antonio Alvarez/CLionProjects/PiRadar/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Antonio Alvarez/CLionProjects/PiRadar/cmake-build-debug/CMakeFiles/rebuild_cache.dir

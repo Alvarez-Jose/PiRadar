@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/PiRadar.dir/main.cpp.o -o PiRadar 
