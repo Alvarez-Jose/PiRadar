@@ -1,6 +1,9 @@
-#include <iostream>
+#include "Radar.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Radar radar;
+    rader.intialize();
+    radar.run();
+
     return 0;
 }
