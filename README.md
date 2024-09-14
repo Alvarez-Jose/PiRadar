@@ -49,3 +49,37 @@ Tools: Precision Screwdriver Set, Digital Multimeter, Wire Cutter/Stripper, Sold
    C++ Compiler path: /usr/bin/g++
 
 4. Test the Connection once toolchain is configured.
+
+##Trouble shooting
+
+Since WiringPi is not supported anymore, the other alternative was using PigPio. Which should be installed using this Link: https://github.com/joan2937/pigpio.git
+
+For me, Clion is unable to run this directly due to an Admin issue of not having permission to use pigpio, from what I have gather this has to do with how fundamentally you can only run pigpio with root access, because some of the processor registers accessed by pigpio require it.
+
+##Below I will add the steps I took to get to this run. 
+
+1. update your package list
+   sudo apt update
+
+2. Install necessary build tools
+   sudo apt install git build-essential cmake
+
+3. close the pigpio repository
+   git clone https://github.com/joan2937/pigpio.git
+
+4. Build and install pigpio
+   cd pigpio
+   make
+   sudo make install
+
+5. Verify the installation
+   pkg-config --libs --cflags libpigpio
+
+6. Start the pigpio daemon
+   sudo systemctl start pigpiod
+
+7. Now make sure to run this on powershell but remote connect to your raspberry pi and run this command.
+   /usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" -S /tmp/tmp.KZun9wkH1P -B /tmp/tmp.KZun9wkH1P/cmake-build-release-raspberrypi
+
+8. Then try running your program
+   sudo /tmp/tmp.KZun9wkH1P/cmake-build-release-raspberrypi/PiRadar

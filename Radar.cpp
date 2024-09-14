@@ -1,24 +1,20 @@
-//
-// Created by Antonio Alvarez on 9/9/2024.
-//
 #include "Radar.h"
 #include "Sensor.h"
 #include "Servo.h"
 #include <iostream>
-
+#include <chrono>
+#include <thread>
 void Radar::initialize() {
-    // Initialize sensors and servo
     Sensor::initialize();
     Servo::initialize();
-    std::cout << "Radar System initalized." << std::endl;
+    std::cout << "Radar System initialized." << std::endl;
 }
 
 void Radar::run() {
-    while(true) {
+    while (true) {
         double distance = Sensor::getDistance();
         double angle = Servo::getAngle();
-        std::cout << "Distance: " << distance << "cm at Angle" << angle << "degrees" << std::endl;
-        // Add logic to update or display or process data
+        std::cout << "Distance: " << distance << "Cm At Angle: " << angle << " Degrees" << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1)); // Adjust delay as needed
     }
 }
-

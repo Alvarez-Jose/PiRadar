@@ -2,8 +2,7 @@
 
 int main() {
     Radar radar;
-    rader.intialize();
+    radar.initialize();
     radar.run();
-
     return 0;
 }

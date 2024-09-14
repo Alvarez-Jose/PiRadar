@@ -6,6 +6,7 @@
 #define RADAR_H
 
 class Radar {
+public:
     void initialize();
     void run();
 };
